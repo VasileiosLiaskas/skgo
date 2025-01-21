@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(58, 58, 58, 0.83);
+  color: white;
+  padding: 10px 20px;
+
+
+}
+
+.logo {
+  margin: 0;
+}
+
+.icons {
+  display: flex;
+  gap: 15px; /* Space between icons */
+}
+
+.icon {
+  cursor: pointer; /* Change cursor to pointer on hover */
+  color: white; /* Icon color */
+  font-size: 24px; /* Size of the icons */
+}
+
+.icon:hover {
+  opacity: 0.7; /* Slightly change opacity on hover */
+}
