@@ -1,0 +1,38 @@
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color:white;
+}
+
+li {
+  padding: 10px;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+li.active {
+  background-color: #436f7e; /* Highlight the active section */
+  border-radius: 14px;
+}
+
+li:hover {
+  background-color: rgba(89, 133, 151, 0.71); /* Add hover effect */
+  border-radius: 14px;
+}
+
+.sidebar {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: rgba(65, 63, 97, 0.76);
+  width: 10%;
+  padding: 10px;
+  position: fixed;
+  height: 100%;
+  top: auto;
+  left: 0;
+  border-bottom-right-radius: 4%;
+  overflow-x: hidden;
+
+}

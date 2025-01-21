@@ -1,3 +1,12 @@
-<p-sidebar [visible]="true" showCloseIcon="false" [baseZIndex]="0" [modal]="false" >
-  <h2>SkGO</h2>
-</p-sidebar>
+<div class="sidebar">
+  <ul>
+    <li class="play-regular"
+        *ngFor="let menuItem of menuItems"
+        [class.active]="menuItem.label === activeSection"
+        (click)="setActiveSection(menuItem)">
+
+      <i [class]="menuItem.icon" style="margin-right: 10px;"></i>
+      <a [routerLink]="menuItem.route">{{ menuItem.label }}</a>
+    </li>
+  </ul>
+</div>

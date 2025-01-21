@@ -1,12 +1,18 @@
-<div class="container">
-  <div class="row d-flex">
-    <div class="col-md-3">
-      <app-sidebar>
-
-      </app-sidebar>
-    </div>
-    <div class="col-md-9">
-    <app-cars></app-cars>
-    </div>
+<div class="p-grid">
+  <!-- Header -->
+  <div class="p-col-12">
+    <app-header></app-header>
   </div>
+
+
+    <!-- Sidebar -->
+    <div class="p-col-fixed sidebar">
+      <app-sidebar></app-sidebar>
+    </div>
+
+    <!-- Main Content -->
+    <div class="p-col main-content">
+      <router-outlet></router-outlet>
+    </div>
+
 </div>

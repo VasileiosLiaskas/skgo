@@ -1,0 +1,32 @@
+<div class="grid">
+  <p-panel header="Στοιχεία αυτοκινήτου">
+    <label class="col-12 sm:col-2" for="licensePlate">{{ 'Πινακίδα' }}</label>
+    <div class="col-12 sm:col-3">
+      <input id="licensePlate" type="text" pInputText>
+    </div>
+
+    <label class="col-12 sm:col-2" for="manufacturer">{{ 'Μάρκα' }}</label>
+    <div class="col-12 sm:col-3">
+      <input id="manufacturer" type="text" pInputText>
+    </div>
+
+
+    <label class="col-12 sm:col-2" for="model">{{ 'Μοντέλο' }}</label>
+    <div class="col-12 sm:col-3">
+      <input id="model" type="text" pInputText>
+    </div>
+
+    <label class="col-12 sm:col-2" for="klm">{{ 'Χιλιόμετρα' }}</label>
+    <div class="col-12 sm:col-3">
+      <input id="klm" type="text" pInputText>
+    </div>
+
+  </p-panel>
+
+  <div class="col-4">
+    <p-button label="Αποθήκευση" [text]="true" [raised]="true" severity="success" size="small"/>
+
+    <p-button label="Διαγραφή" [text]="true" [raised]="true" severity="danger" size="small"/>
+  </div>
+  </div>
+
