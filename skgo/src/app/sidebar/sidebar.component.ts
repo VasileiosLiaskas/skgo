@@ -26,7 +26,7 @@ export class SidebarComponent implements OnInit{
     { label: 'Αυτοκίνητα', route: '/cars/list', icon: 'fa fa-car'},
     { label: 'Παραδόσεις', route: '/deliveries', icon: 'fa fa-user-check'  },
     { label: 'Επιστροφές', route: '/returns', icon: 'fa fa-hand-holding-usd' },
-    { label: 'Συνεργείο', route: '/garage' , icon: 'fa fa-warehouse' },
+    { label: 'Συνεργείο', route: '/service' , icon: 'fa fa-warehouse' },
     { label: 'Κρατήσεις', route: '/bookings', icon: 'fa fa-blender-phone' }
   ];
   activeSection = this.menuItems[0].label;

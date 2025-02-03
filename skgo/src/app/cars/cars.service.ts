@@ -19,7 +19,7 @@ export class CarsService {
   }
 
   getCarList(){
-    return this.http.get(`${this.baseUrl}/list`);
+    return this.http.get<Car[]>(`${this.baseUrl}/list`);
   }
 
   initForm() {

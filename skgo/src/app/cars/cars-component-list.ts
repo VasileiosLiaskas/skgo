@@ -4,6 +4,7 @@ import {CarsService} from "./cars.service";
 import {MenuItem} from "primeng/api";
 import {FormGroup} from "@angular/forms";
 import {TableContextMenuSelectEvent} from "primeng/table";
+import {Car} from "./car.model";
 
 
 @Component({
@@ -13,61 +14,41 @@ import {TableContextMenuSelectEvent} from "primeng/table";
 })
 export class CarsComponentList implements OnInit{
 
-  cars:any;
+  cars: Car[] =[];
   showModal:boolean=false;
   edit:boolean=false;
-  menuItems: MenuItem[]=[];
   selectedCar: any = null;
   carForm!: FormGroup ;
+  minimizedCars: { [licensePlate: string]: boolean } = {};
 
   constructor( private carsService: CarsService) { }
 
   ngOnInit(): void {
 
-    this.carsService.getCarList().subscribe( responseData => {
+    this.carsService.getCarList().subscribe( (responseData: Car[]) => {
       this.cars = responseData;
+      this.cars.forEach(car => {
+        if (car.licensePlate) {
+          this.minimizedCars[car.licensePlate] = true;
+        }
+      });
     })
-    this.menuItems = [
-      {
-        label: 'Edit',
-        icon: 'pi pi-pencil',
-        command: () => this.onEditCar()
-      }
-    ];
-
     this.carForm= this.carsService.initForm()
-  }
-  onEditCar() {
-    if (this.selectedCar) {
-      // Populate form with selected car's data
-      this.carForm.patchValue({
-        id: this.selectedCar.id,
-        licensePlate: this.selectedCar.licensePlate,
-        manufacturer: this.selectedCar.manufacturer,
-        model: this.selectedCar.model,
-        klm: this.selectedCar.klm
-      });
 
-      this.showModal = true; // Show the modal
-      this.edit = true; // Set edit mode to true
-    }
   }
 
-  saveCar() {
-    if (this.carForm){
-      let car= this.carForm.value;
-      this.carsService.saveCar(car).subscribe( responseData =>{
-        console.log(responseData);
-      });
-    }
+
+  editCar(car: any) {
+
   }
 
-  onPlusChange() {
-    this.showModal= !this.showModal;
+  viewCar(car: any) {
+
   }
 
-  onRowSelect($event: TableContextMenuSelectEvent) {
-    this.selectedCar= $event.data;
-
+  toggleMinimize(licensePlate: string | undefined ) {
+    if (!licensePlate) return;
+    this.minimizedCars[licensePlate] = !this.minimizedCars[licensePlate];
+    console.log(this.minimizedCars[licensePlate]);
   }
 }

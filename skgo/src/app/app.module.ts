@@ -19,6 +19,7 @@ import {InputTextModule} from "primeng/inputtext";
 import {CarsComponentView} from "./cars/cars-component-view";
 import {ContextMenuModule} from "primeng/contextmenu";
 import {ReactiveFormsModule} from "@angular/forms";
+import {ServiceComponent} from "./service/service-component";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     CarsComponentList,
     HomeComponent,
     HeaderComponent,
-    CarsComponentView
+    CarsComponentView,
+    ServiceComponent
   ],
   imports: [
     BrowserModule,

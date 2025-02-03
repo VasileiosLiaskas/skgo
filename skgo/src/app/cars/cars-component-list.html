@@ -1,70 +1,28 @@
-<div>
-  <div class="play-regular">
-
-    <p-table  styleClass="p-datatable-sm p-datatable-striped" id="table"
-             [value]="cars" [contextMenu]="contextMenu" (onContextMenuSelect)="onRowSelect($event)">
-      <ng-template pTemplate="header">
-        <tr>
-          <th>Πινακίδα</th>
-          <th>Κατασκευαστής</th>
-          <th>Μοντέλο</th>
-          <th>Χλμ</th>
-        </tr >
-      </ng-template>
-      <ng-template pTemplate="body" let-cars>
-        <tr [pContextMenuRow]="cars">
-          <td>{{ cars.licensePlate }}</td>
-          <td>{{ cars.manufacturer }}</td>
-          <td>{{ cars.model }}</td>
-          <td>{{ cars.klm }}</td>
-        </tr>
-      </ng-template>
-    </p-table>
-    <p-contextMenu #contextMenu [model]="menuItems" ></p-contextMenu>
+<div *ngFor="let car of cars ; let i = index" class="card">
+  <div class="card-header" *ngIf="car.licensePlate" (click)="toggleMinimize(car.licensePlate)">
+    {{ car.licensePlate  }}
+<!--    <span class="minimize-icon" >-->
+<!--      {{ minimizedCars[car.licensePlate] ? '🔽' : '🔼' }}-->
+<!--    </span>-->
   </div>
+  <div class="card-body" *ngIf="car.licensePlate && !minimizedCars[car.licensePlate]">
+    <table class="car-table">
+      <thead>
+      <tr>
+        <th>Χιλιόμετρα</th>
+        <th>Λήξη Ασφάλειας</th>
+        <th>ΚΤΕΟ</th>
+      </tr>
+      </thead>
+      <tr>
+        <td>{{ car.klm }}</td>
+        <td>15/06/2025</td>
+        <td> 06/2025
+      </tr>
 
-  <div *ngIf="showModal" class=" play-regular" style="display: inline-block; padding:10px">
-    <div >
-      <p-panel header="Στοιχεία αυτοκινήτου">
-        <form  [formGroup]="carForm">
-        <label  for="licensePlate">{{ 'Πινακίδα' }}</label>
-        <div >
-          <input formControlName="licensePlate" id="licensePlate" type="text" pInputText>
-        </div>
-
-        <label for="manufacturer">{{ 'Μάρκα' }}</label>
-        <div >
-          <input  formControlName="manufacturer" id="manufacturer" type="text" pInputText>
-        </div>
-
-
-        <label  for="model">{{ 'Μοντέλο' }}</label>
-        <div >
-          <input id="model" formControlName="model" type="text" pInputText>
-        </div>
-
-        <label  for="klm">{{ 'Χιλιόμετρα' }}</label>
-        <div >
-          <input id="klm"  formControlName="klm" type="text" pInputText>
-        </div>
-        <div>
-          <p-button label="Αποθήκευση" [text]="true" [raised]="true" severity="success" size="small" (click)="saveCar()"/>
-        </div>
-        <div>
-          <p-button *ngIf="edit" label="Διαγραφή" [text]="true" [raised]="true" severity="danger" size="small"/>
-        </div>
-        </form>
-      </p-panel>
-    </div>
-    </div>
-
-
-
-
-
-  <button pButton pRipple type="button" class="p-button-rounded p-button-secondary" icon="fas fa-plus-square"
-          style="position: fixed; bottom: 20px; right: 20px; font-size: 20px;" (click)="onPlusChange()">
-  </button>
+    </table>
+    <button class="service" (click)="viewCar(car)">Συνεργείο</button>
+    <button class="service" (click)="viewCar(car)">Παραδόσεις</button>
+    <button class="service" (click)="viewCar(car)">Επιστροφές</button>
+  </div>
 </div>
-
-
