@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
-import {Car} from "./car.model";
+import {Car} from "./Car.model";
 import {FormBuilder} from "@angular/forms";
 
 @Injectable({providedIn: 'root'})

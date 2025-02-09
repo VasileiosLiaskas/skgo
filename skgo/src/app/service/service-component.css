@@ -1,5 +1,5 @@
 .add-service {
-  background: white;
+  background: rgba(65, 63, 97, 0.76);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -8,9 +8,13 @@
 .form-group {
   margin-bottom: 15px;
 }
+h2{
+  color:white;
+}
 label {
   display: block;
   font-weight: bold;
+  color: white;
 }
 input, select, button {
   width: 100%;
@@ -20,11 +24,11 @@ input, select, button {
   border-radius: 4px;
 }
 button {
-  background-color: #007bff;
+  background-color: #436f7e;
   color: white;
   border: none;
   cursor: pointer;
 }
 button:hover {
-  background-color: #0056b3;
+  background-color: #548797;
 }

@@ -18,7 +18,7 @@ import { HeaderComponent } from './header/header.component';
 import {InputTextModule} from "primeng/inputtext";
 import {CarsComponentView} from "./cars/cars-component-view";
 import {ContextMenuModule} from "primeng/contextmenu";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ServiceComponent} from "./service/service-component";
 
 @NgModule({
@@ -31,22 +31,23 @@ import {ServiceComponent} from "./service/service-component";
     CarsComponentView,
     ServiceComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    Button,
-    SidebarModule,
-    PanelModule,
-    TableModule,
-    BrowserAnimationsModule,
-    ButtonDirective,
-    Ripple,
-    FontAwesomeModule,
-    InputTextModule,
-    ContextMenuModule,
-    ReactiveFormsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        Button,
+        SidebarModule,
+        PanelModule,
+        TableModule,
+        BrowserAnimationsModule,
+        ButtonDirective,
+        Ripple,
+        FontAwesomeModule,
+        InputTextModule,
+        ContextMenuModule,
+        ReactiveFormsModule,
+        FormsModule,
+    ],
   providers: [
     provideClientHydration()
   ],
