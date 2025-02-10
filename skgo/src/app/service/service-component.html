@@ -1,34 +1,37 @@
-<div class="add-service" >
-  <h2>Συνεργείο</h2>
-  <form (ngSubmit)="onSubmit()" [formGroup]="serviceForm">
-    <div class="form-group">
-      <label for="car-number">Όχημα</label>
-      <select id="car-number" formControlName="vehicleId">
-        <option *ngFor="let car of cars" [value]="car.id">{{ car.licensePlate }}</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label for="execution-date">Ημερομηνία Εκτέλεσης</label>
-      <input type="date" id="execution-date" formControlName="serviceDate">
-    </div>
-    <div class="form-group">
-      <label for="expiration-date">Ημερομηνία Λήξης</label>
-      <input type="date" id="expiration-date" formControlName="expirationDate">
-    </div>
-    <div class="form-group">
-      <label for="serviceType">Τύπος Σέρβις</label>
-      <select id="serviceType" formControlName="serviceType">
-        <option *ngFor="let type of serviceTypes" [value]="type.name">{{ type.translation}}</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label for="amount">Ποσό</label>
-      <input type="number" id="amount" formControlName="amount" min="0">
-    </div>
-    <div class="form-group">
-      <label for="balance">Υπόλοιπο</label>
-      <input type="number" id="balance" formControlName="remainingAmount" min="0">
-    </div>
-    <button type="submit">Προσθήκη</button>
-  </form>
-</div>
+<div  *ngIf="showForm" class="add-service">
+
+      <h2>Συνεργείο</h2>
+      <button (click)="showForm = false" class="close-btn">✖</button>
+    <form (ngSubmit)="onSubmit()" [formGroup]="serviceForm">
+      <div class="form-group">
+        <label for="car-number">Όχημα</label>
+        <select id="car-number" formControlName="vehicleId">
+          <option *ngFor="let car of cars" [value]="car.id">{{ car.licensePlate }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="execution-date">Ημερομηνία Εκτέλεσης</label>
+        <input type="date" id="execution-date" formControlName="serviceDate">
+      </div>
+      <div class="form-group">
+        <label for="expiration-date">Ημερομηνία Λήξης</label>
+        <input type="date" id="expiration-date" formControlName="expirationDate">
+      </div>
+      <div class="form-group">
+        <label for="serviceType">Τύπος Σέρβις</label>
+        <select id="serviceType" formControlName="serviceType">
+          <option *ngFor="let type of serviceTypes" [value]="type.name">{{ type.translation }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="amount">Ποσό</label>
+        <input type="number" id="amount" formControlName="amount" min="0">
+      </div>
+      <div class="form-group">
+        <label for="balance">Υπόλοιπο</label>
+        <input type="number" id="balance" formControlName="remainingAmount" min="0">
+      </div>
+      <button type="submit">Προσθήκη</button>
+    </form>
+  </div>
+

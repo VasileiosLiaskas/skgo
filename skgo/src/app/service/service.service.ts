@@ -21,7 +21,7 @@ export class ServiceCarService {
   }
 
   saveService(service:Service ){
-
+    return this.http.post<Service>(`${this.baseUrl}/save`, service);
   }
 
   initForm() {
@@ -35,7 +35,7 @@ export class ServiceCarService {
     //   remainingAmount: [0, [Validators.required, Validators.min(0)]],
     //   comments: [null]  // Adding comments field
     // });
-    const service = new ServiceCar();
+    const service = new Service();
     let form= this.formBuilder.group(service);
     return form;
   }

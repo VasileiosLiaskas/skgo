@@ -15,6 +15,7 @@ export class ServiceComponent implements OnInit{
   serviceTypes:any;
   serviceForm!: FormGroup;
   cars: Car[] | undefined;
+  showForm: boolean = true;
 
   constructor( private serviceCarService: ServiceCarService,
                private carService: CarsService) {
@@ -37,7 +38,9 @@ export class ServiceComponent implements OnInit{
 
   onSubmit() {
     const service= this.serviceForm.value;
-
+    this.serviceCarService.saveService(service).subscribe(()=>{
+      console.log("new Service");
+    })
   }
 
 }
