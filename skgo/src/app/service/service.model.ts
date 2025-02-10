@@ -1,4 +1,4 @@
-export class ServiceCar {
+export class Service {
 
   public id: number | null = null;
   public vehicleId : number | null = null;

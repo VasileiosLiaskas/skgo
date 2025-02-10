@@ -4,7 +4,7 @@ import {CarsService} from "./cars.service";
 import {MenuItem} from "primeng/api";
 import {FormGroup} from "@angular/forms";
 import {TableContextMenuSelectEvent} from "primeng/table";
-import {Car} from "./Car.model";
+import {Car} from "./car.model";
 
 
 @Component({

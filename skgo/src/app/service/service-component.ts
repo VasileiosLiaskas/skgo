@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormGroup} from "@angular/forms";
 import {CarsService} from "../cars/cars.service";
-import {Car} from "../cars/Car.model";
-import {ServiceCarService} from "./car-service.service";
+import {Car} from "../cars/car.model";
+import {ServiceCarService} from "./service.service";
 
 
 @Component({
@@ -37,7 +37,6 @@ export class ServiceComponent implements OnInit{
 
   onSubmit() {
     const service= this.serviceForm.value;
-    console.log(service);
 
   }
 
